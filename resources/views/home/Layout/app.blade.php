@@ -82,10 +82,10 @@
                 <div class="d-none d-lg-block">
                     <nav class="menu-area d-flex align-items-center">
                         <div class="logo">
-                            <a href="index.html"><img src="dist/images/logo/logo.png" alt="logo" /></a>
+                            <a href="{{ route('index') }}"><img src="dist/images/logo/logo.png" alt="logo" /></a>
                         </div>
                         <ul class="main-menu d-flex align-items-center">
-                            <li><a class="active" href="index.html">Home</a></li>
+                            <li><a class="active" href="{{ route('index') }}">Home</a></li>
                             <li><a href="shop.html">Men</a></li>
                             <li><a href="shop.html">Women</a></li>
                             <li><a href="shop.html">Shop</a></li>
@@ -129,7 +129,7 @@
                         <div class="menu-icon ml-auto">
                             <ul>
                                 <li>
-                                    <a href="wishlist.html">
+                                    <a href="{{ route('product-wishlist') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20"
                                             viewBox="0 0 22 20">
                                             <g id="Heart" transform="translate(1 1)">
@@ -144,8 +144,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="22"
-                                            height="22" viewBox="0 0 22 22">
+                                    <a href="{{ route('cart-info') }}"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="22" height="22" viewBox="0 0 22 22">
                                             <g id="Icon" transform="translate(-1524 -89)">
                                                 <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="0.909"
                                                     cy="0.952" rx="0.909" ry="0.952"
@@ -328,7 +328,7 @@
     </header>
     <!-- Header Area End -->
 
-
+    @yield('content')
 
     <!-- Footer -->
     <footer>
@@ -418,10 +418,10 @@
     </footer>
     <!-- Footer -->
 
-    <script src="src/js/jquery.min.js"></script>
-    <script src="src/js/bootstrap.min.js"></script>
-    <script src="src/scss/vendors/plugin/js/slick.min.js"></script>
-    <script src="src/scss/vendors/plugin/js/jquery.nice-select.min.js"></script>
+    <script src="{{ asset('src/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('src/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('src/scss/vendors/plugin/js/slick.min.js') }}"></script>
+    <script src="{{ asset('src/scss/vendors/plugin/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('dist/main.js') }}"></script>
     <script>
         function openNav() {
