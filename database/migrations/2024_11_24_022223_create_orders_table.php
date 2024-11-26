@@ -11,8 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('oders', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->float('total_price');
+            $table->string('status');
+
+            $table->foreign('user_id')->references('id')->on('users')
+            ->restrictOnDelete()->restrictOnUpdate();
+            
             $table->timestamps();
         });
     }

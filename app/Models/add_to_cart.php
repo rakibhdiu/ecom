@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class wishlist extends Model
+class add_to_cart extends Model
 {
     public function user(){
         return $this->belongsTo(user::class);

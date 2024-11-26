@@ -33,4 +33,4 @@ Route::get('/product-wishlist',[HomeController::class,'wishlist'])->name('produc
 
 Route::get('/dashboard',[AdminController::class,'admin'])->name('admin');
 Route::get('/category',[AdminController::class,'category'])->name('category');
-Route::post('/add-category',[AdminController::class,'addCategory'])->name('addcategory');
+Route::post('/add-category',[AdminController::class,'addCategory'])->name('add-category');

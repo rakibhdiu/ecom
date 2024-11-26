@@ -11,17 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('add_to_carts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('phone');
-            $table->string('city');
-            $table->text('address');
+            $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('user_id');
+            $table->string('info');
+            $table->float('price');
+            $table->integer('quantity');
 
+            $table->foreign('product_id')->references('id')->on('products')
+            ->restrictOnDelete()->restrictOnUpdate();
             $table->foreign('user_id')->references('id')->on('users')
             ->restrictOnDelete()->restrictOnUpdate();
-
+            
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('add_to_carts');
     }
 };

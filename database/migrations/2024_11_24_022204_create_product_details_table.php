@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('product_details', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product_id');
+            $table->string('quantity');
+            $table->string('image');
+            $table->string('price');
+            $table->string('discount_price');
+
+            $table->foreign('product_id')->references('id')->on('products')
+            ->restrictOnDelete()->restrictOnUpdate();
+
             $table->timestamps();
         });
     }
