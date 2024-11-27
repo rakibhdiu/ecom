@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('stock');
             $table->string('star');
             $table->unsignedBigInteger('category_id');
+           
 
             $table->foreign('category_id')->references('id')->on('categories')
             ->restrictOnDelete()->restrictOnUpdate();

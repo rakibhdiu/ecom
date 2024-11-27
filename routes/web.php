@@ -34,3 +34,10 @@ Route::get('/product-wishlist',[HomeController::class,'wishlist'])->name('produc
 Route::get('/dashboard',[AdminController::class,'admin'])->name('admin');
 Route::get('/category',[AdminController::class,'category'])->name('category');
 Route::post('/add-category',[AdminController::class,'addCategory'])->name('add-category');
+Route::get('/show-category',[AdminController::class,'showCategory'])->name('show-category');
+Route::get('/delete-category/{id}',[AdminController::class,'deleteCategory'])->name('delete-category');
+
+
+Route::get('/product',[AdminController::class,'product'])->name('product');
+Route::post('/add-product',[AdminController::class,'addProduct'])->name('add-product');
+Route::get('/show-product',[AdminController::class,'showProduct'])->name('show-product');
